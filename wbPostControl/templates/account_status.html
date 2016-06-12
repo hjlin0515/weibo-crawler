@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+{% load staticfiles %}
+
+
+{% block side_block %}
+<ul class="nav nav-sidebar">
+  <li><a href="{% url 'index' %}">Accounts</a></li>
+  <li><a href="{% url 'add_account' %}">Add Account</a></li>
+  <li><a href="{% url 'delete_account' %}">Delete Account</a></li>
+  <li><a href="{% url 'account_status' username %}">Account Status</a></li>
+</ul>
+{% endblock %}
+
+{% block body_block %}
+
+  <div class="Account_table">
+    <table class="table table-hover">
+      <caption>username:{{username}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;interest:{{interest}}</caption>
+      <thead>
+        <tr>
+          <th>date</th>
+          <th>type</th>
+          <th>text</th>
+          <th>weibo_id</th>
+          <th>weibo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% if records %}
+        {% for record in records %}
+          <tr>
+            <td>{{record.date}}</td>
+            <td>{{record.type}}</td>
+            <td>{{record.text}}</td>
+            <td>{{record.weibo_id}}</td>
+            <td>{{record.weibo}}</td>
+          </tr>
+          {% endfor %}
+          {% endif %}
+      </tbody>
+      </table>
+    </div>
+{% endblock %}

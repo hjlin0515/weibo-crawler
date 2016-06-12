@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% load staticfiles %}
+
+
+{% block side_block %}
+<ul class="nav nav-sidebar">
+  <li><a href="{% url 'index' %}">Accounts</a></li>
+  <li><a href="{% url 'add_account' %}">Add Account</a></li>
+  <li><a href="{% url 'delete_account' %}">Delete Account</a></li>
+</ul>
+{% endblock %}
+
+{% block body_block %}
+<form id="Account_Form" method='POST' action="{% url 'add_account' %}">
+  {% csrf_token %}
+  {% for field in form.visible_fields %}
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+    {{field.errors}}
+    {{field.help_text}}
+    {{field}}
+
+    </div>
+  </div>
+  {% endfor %}
+  <div class="form-group">
+     <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Add Account</button>
+     </div>
+  </div>
+</form>
+{% endblock %}
