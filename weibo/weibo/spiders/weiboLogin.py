@@ -95,6 +95,5 @@ class Weibo():
 
 if __name__ == '__main__':
   weibo = Weibo()
-  print weibo.login('13092400382', 'yuezong253')
-  #weibo1 = Weibo()
-  #$print weibo1.login('18246146073','zhishi664')
+  print weibo.login(username, password)
+
