@@ -1,6 +1,0 @@
-[10/Apr/2016 00:25:01] "GET / HTTP/1.1" 200 3570
-[10/Apr/2016 00:25:01] "GET /static/css/bootstrap.min.css HTTP/1.1" 304 0
-[10/Apr/2016 00:25:01] "GET /static/css/dashboard.css HTTP/1.1" 304 0
-[10/Apr/2016 00:25:01] "GET /favicon.ico HTTP/1.1" 404 2580
-[10/Apr/2016 00:41:55] "GET / HTTP/1.1" 200 3570
-[10/Apr/2016 00:41:58] "GET /account_status/13092400382/ HTTP/1.1" 200 2184
